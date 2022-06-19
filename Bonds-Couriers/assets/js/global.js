@@ -3,6 +3,49 @@
     $(document).ready( function() {
         customSelectBox();
         subMenu();
+        datepicker();
+
+        // add to job
+        $("#add-to-job").on("click", function(){
+            var wrapper = $(".add-job-wrapper");
+            var html = '<div class="manage-job">' +
+            '<div class="title">Manage Job Notifications</div>' +
+            '<div class="col-two-field">' +
+                '<div class="bonds-field col-2">' +
+                    '<label>Job Status Messaging</label>' +
+                    '<select class="bonds-manage-job-select select-hidden"' +
+                        'name="eBook[0][bond_manage_job]">' +
+                        '<option value="pod" selected>POD</option>' +
+                        '<option value="pickedup">Picked up</option>' +
+                        '<option value="delay">Driver Delay</option>' +
+                        '<option value="confirm">Confirm Job Booking</option>' +
+                    '</select>' +
+                '</div>' +
+                '<div class="bonds-field col-2">' +
+                    '<label>Email / Mobile</label>' +
+                    '<select class="bonds-email-phone-select select-hidden"' +
+                        'name="eBook[0][bond_email_phone]">' +
+                        '<option value="1" selected>Value 1</option>' +
+                        '<option value="2">Value 2</option>' +
+                        '<option value="3">Value 3</option>' +
+                        '<option value="4">Value 4</option>' +
+                    '</select>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+
+        wrapper.append(html);
+        customSelectBox();
+        });
+
+        $("#remove-to-job").on("click", function(){
+            var wrapper = $(".add-job-wrapper");
+            wrapper.find(".manage-job").each(function( index ) {
+                if ((index+1) == wrapper.find(".manage-job").length) {
+                    $(this).remove();
+                }
+            });
+        });
     });
     
     // Cusom select box to style
@@ -79,7 +122,22 @@
         }
         
     }
-    
+
+    function datepicker(){
+        $('#datepicker').datepicker({
+            format: 'dd-mm-yyyy',
+            startDate: '-3d',
+            autoclose: true,
+            calendarWeeks : true,
+            clearBtn: true,
+            disableTouchKeyboard: true
+        });
+
+        $('#timepicker').datetimepicker({
+            format: 'HH:mm',
+            autoclose:true
+        });
+    }
     
     
     })( jQuery );

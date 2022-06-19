@@ -151,7 +151,7 @@ body{
             &:after{ display: none; }
           }
       }
-
+     
       .cta-button{
             position: relative;
             z-index: 1;
@@ -294,4 +294,12 @@ body{
 ::-webkit-scrollbar-thumb {
     background: $color-primary;
     border-radius:3px;
+}
+input[type="time"]::-webkit-calendar-picker-indicator{
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
 }

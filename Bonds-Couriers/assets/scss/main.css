@@ -385,6 +385,15 @@ body th {
   border-radius: 3px;
 }
 
+input[type="time"]::-webkit-calendar-picker-indicator {
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
 /* Fonts */
 /* Color */
 /* Break point */
@@ -895,7 +904,18 @@ body th {
   top: -7px;
   background: #ffffff;
   padding: 0 15px;
-  z-index: 2;
+  z-index: 4;
+}
+
+.bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .input-group-append {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .input-group-append .input-group-datepicker {
+  background-color: transparent;
+  border: 0;
 }
 
 .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .custom-select-wrap {
